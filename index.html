@@ -1,1 +1,120 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="assets/favicon.ico" />
+  <title>Time conversor</title>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+  <link rel="stylesheet" href="styles.css">
+
+  <script data-ad-client="ca-pub-9153742232455348" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+
+<body>
+  <section>
+    <div id="container" class="container-fluid container-sm">
+      <div class="card" style="margin: 1rem;">
+        <div class="card-header">
+          <h3>Milliseconds Conversor</h3>
+        </div>
+        <div class="card-body">
+
+          <div id="calculator">
+            <form method="post" action="#">
+              <div class="form-group">
+                <label for="inputMills">Milliseconds:</label>
+                <input type="number" min="0" class="form-control" id="inputMills" inputmode="numeric" pattern="[0-9]*"
+                  value="" onchange="updateMilliseconds(this.value);" onKeyUp="updateMilliseconds(this.value);"
+                  placeholder="Milliseconds" />
+                <small id="inputMillsHelp" class="form-text text-muted">Enter a value you want to convert</small>
+              </div>
+              <div class="form-group">
+                <label for="outputConverted">The converted value is:</label>
+                <input type="text" class="form-control" id="outputConverted" readonly placeholder=""
+                  onClick="this.select();" />
+                <input type="checkbox" id="shortText"
+                  onChange="updateMilliseconds(document.getElementById('outputConverted').value);" />
+                <label for="shortText">Shorthand text</label>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div id="container" class="container-fluid container-sm">
+      <div class="card" style="margin: 1rem;">
+        <div class="card-body">
+          <h5 class="card-title">Milliseconds...</h5>
+          <p class="card-text">A millisecond is 1/1000 of a second (0.001 or 10<sup>−3</sup>) and the symbol is
+            <strong>ms</strong>.
+          </p>
+          <p class="card-text">The base unit for a millisecond is second and the prefix is milli. This unit is most used
+            to measure time duration for dates and hours. </p>
+          <p class="card-text">Can be very useful to find out the values in day, hours, minutes and seconds, what is
+            most common for humans to get a picture about how much time has passed.</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <p>&nbsp;</p>
+
+  <footer>
+    <small>
+      by Cris
+      <span role="img" aria-label="smile">😉</span>
+    </small>
+  </footer>
+
+  <div id="app"></div>
+  <div id="cookieconsent"></div>
+  <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+  <script>
+    window.cookieconsent.initialise({
+      container: document.getElementById("cookieconsent"),
+      palette: {
+        popup: { background: "#1aa3ff" },
+        button: { background: "#e0e0e0" },
+      },
+      revokable: true,
+      onStatusChange: function (status) {
+        console.log(this.hasConsented() ?
+          'enable cookies' : 'disable cookies');
+      },
+      "position": "bottom-right",
+      "theme": "classic",
+      "domain": "https://i71n4.csb.app/",
+      "secure": true,
+      "content": {
+        "header": 'Cookies used on the website!',
+        "message": 'This website uses cookies to improve your experience.',
+        "dismiss": 'Got it!',
+        "allow": 'Allow cookies',
+        "deny": 'Decline',
+        "link": 'Learn more',
+        "href": 'https://www.cookiesandyou.com',
+        "close": '&#x274c;',
+        "policy": 'Cookie Policy',
+        "target": '_blank',
+      }
+    });
+
+  </script>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+
+
+</html>
